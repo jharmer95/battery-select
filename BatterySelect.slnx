@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="BatterySelectTray/BatterySelectTray.csproj" Id="02ec39c7-939d-4ee3-b505-d178b4ba9ce0" />
+  <Project Path="PowerModeSelect/PowerModeSelect.csproj" />
+</Solution>
