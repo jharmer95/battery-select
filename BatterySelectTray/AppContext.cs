@@ -107,11 +107,17 @@ public class AppContext : ApplicationContext
 
     private void HandleUpdateStatus(object? sender, EventArgs e)
     {
-        UpdateTrayIcon();
+        UpdateTrayIcon(e is PowerModeChangedEventArgs);
     }
 
-    private void UpdateTrayIcon()
+    private void UpdateTrayIcon(bool delay = false)
     {
+        if (delay)
+        {
+            // Allow time for the system to update power status
+            Thread.Sleep(1_000);
+        }
+
         var currentPowerMode = PowerSystem.GetCurrentPowerMode();
 
         if (PowerSystem.IsAcPower())
